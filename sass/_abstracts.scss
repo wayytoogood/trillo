@@ -1,0 +1,29 @@
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin adjustFlex($jc, $ai) {
+  display: flex;
+  justify-content: $jc;
+  align-items: $ai;
+}
+
+@mixin transition($time: 0.2s, $func: linear, $pro: all) {
+  transition: $pro $time $func;
+}
+
+$bp-largest: 75em; //1200px
+$bp-large: 68.75em; //1100px
+$bp-medium: 56.25em; //900px
+$bp-medium-2: 47.8125em; //765px
+$bp-small: 41.25em; //660px
+$bp-small-2: 34.375em; //550px
+$bp-small-3: 31.25rem; //500px
+
+@mixin respond($breakpoint) {
+  @media only screen and (max-width: $breakpoint) {
+    @content;
+  }
+}
